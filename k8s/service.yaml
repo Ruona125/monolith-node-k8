@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: monolith-svc
+  namespace: monolith-demo
+  labels:
+    app: monolith
+spec:
+  type: LoadBalancer
+  selector:
+    app: monolith
+ports:
+  - name: http
+    port: 80
+    targetPort: 3000
